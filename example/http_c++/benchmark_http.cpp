@@ -36,7 +36,7 @@ DEFINE_bool(dont_fail, false, "Print fatal when some call failed");
 DEFINE_int32(dummy_port, -1, "Launch dummy server at this port");
 DEFINE_string(protocol, "http", "Client-side protocol");
 
-bvar::LatencyRecorder g_latency_recorder("client");
+bvar::LatencyRecorder g_latency_recorder("client");  //统计时延的bvar
 
 static void* sender(void* arg) {
     brpc::Channel* channel = static_cast<brpc::Channel*>(arg);
